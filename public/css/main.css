@@ -2,7 +2,7 @@ body{
 	font-family: arial;
 	margin: 0;
 	padding: 0;
-	
+
 
 }
 a {
@@ -14,24 +14,25 @@ h1,h2,h3,h4,h5,p,label{
 	padding: 0;
 }
 .header{
-	height: 106px;
+	background-color: black
 }
 .header img{
 	max-width: 100%;
-	
+
 }
 .mainwrapper{
 	overflow: auto;
 	max-width: 850px;
 	margin: 0 auto;
 	background-color: #fff;
-	padding: 20px
+	overflow: hidden;
+	margin-bottom: 30px;
 }
 
 
 .slider img{
 	width: 100%;
-	
+
 }
 .innerContent{
 
@@ -50,11 +51,12 @@ h1,h2,h3,h4,h5,p,label{
 }
 .formdata{
 	margin-top: 20px;
+	margin: 20px;
 }
 .formdata label{
 	font-size: 17px;
 
-	margin: 10px;
+	margin: 5px;
 
 }
 
@@ -89,7 +91,7 @@ input[type="email"] {
 	margin-top: 30px;
 }
 input[type="submit"]{
-	background-color: #ca2648;
+	background-color: red;
 	color: #fff;
 	font-size: 20px;
 	padding: 10px 30px 10px 30px;
@@ -113,7 +115,7 @@ input[type="submit"]{
 	display:none ;
 	font-size: 12px !important;
 	color: red;
-	margin:  10px !important;
+	margin:  5px !important;
 	margin-top: 10px;
 }
 .colorColum{
@@ -199,13 +201,16 @@ o {box-sizing: border-box; }
 	/*! background-color: red; */
 	overflow: auto;
 	/*! min-height: 30px; */
-	margin-bottom: 17px;
+	/* margin-bottom: 17px; */
 }
 .box1{
 	width: 30px;
 	height: 20px;
 	float: right;
 
+}
+footer h4{
+	padding: 10px;
 }
 footer h4{
 	text-align: center;
@@ -217,4 +222,8 @@ footer img{
 	width: 67%;
 	float: right;
 	overflow: hidden;
+}
+
+@media screen and (max-width: 992px) {
+
 }

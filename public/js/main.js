@@ -80,16 +80,6 @@ function toggle1(){
 	}
 }
 
-function toggle2(){
-	let checkbox2 =  document.getElementById("checkbox2").checked;
-
-	if(checkbox2===false){
-		document.getElementById('checkbox2Error').style.display='block';
-			return false
-	}else{
-		document.getElementById('checkbox2Error').style.display='none';
-	}
-}
 
 
 
@@ -101,7 +91,7 @@ function validateForm(){
 
 	var LastName = document.getElementById("LastName").value;
 	if(ValidateLetters(LastName)===false){
-		document.getElementById('lastNameError').innerHTML='Please Last Name';
+		document.getElementById('lastNameError').innerHTML='שם משפחה הינו שדה חובה - אותיות בעברית בלבד';
 		document.getElementById('lastNameError').style.display='block';
 		document.getElementById('LastName').style.border='1px solid red';
 		count++;
@@ -119,7 +109,7 @@ function validateForm(){
 	}
 
 	if(ValidatePhone()===false){
-		document.getElementById('telephoneError').innerHTML='שדה נייד הינו שדה חובה - מספרים בלבד באורך 10';
+		document.getElementById('telephoneError').innerHTML='טלפון סלולרי הינו שדה חובה - 10 ספרות';
 		document.getElementById('telephoneError').style.display='block';
 		document.getElementById('telephone').style.border='1px solid red';
 		count++;
@@ -128,20 +118,20 @@ function validateForm(){
 
 	var FirstName = document.getElementById("FirstName").value;
 	if(ValidateLetters(FirstName)===false){
-		document.getElementById('firstNameError').innerHTML='Please first Name';
+		document.getElementById('firstNameError').innerHTML='שם פרטי הינו שדה חובה - אותיות בעברית בלבד';
 		document.getElementById('firstNameError').style.display='block';
 		document.getElementById('FirstName').style.border='1px solid red';
 		count++;
 	};
 
-	
 
-	
+
+
 
 	let checkbox1 = document.getElementById("checkbox1").checked;
-	let checkbox2 = document.getElementById("checkbox2").checked;
-	
-	console.log(checkbox1,checkbox2 )
+
+
+	console.log(checkbox1)
 
 	if(checkbox1===false){
 		document.getElementById('checkbox1Error').innerHTML='יש לאשר את תקנון הפעילות';
@@ -149,12 +139,6 @@ function validateForm(){
 			count++;
 	}
 
-
-	if(checkbox2===false){
-		document.getElementById('checkbox2Error').innerHTML='יש לאשר קבלת עדכונים';
-		document.getElementById('checkbox2Error').style.display='block';
-			count++;
-	}
 
 console.log(count)
 

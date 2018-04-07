@@ -10,14 +10,14 @@ var coupon = 111111111;
 router.get('/', function(req, res, next) {
   res.render('index');
 
- console.log(req.body)
+
 
 
 });
 
 router.post('/', function(req, res, next) {
 
-
+ console.log(req.body)
 	res.render("thankyou",{coupon: coupon})
 
 
