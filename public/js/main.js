@@ -16,8 +16,8 @@ function ValidateEmail()
 
 function ValidatePhone(){
 	var inputPhone = document.getElementById('telephone').value;
-	var phoneFormat = /^\d{8})$/;
-	// var phoneFormat = /^05*(\d{8})$/;
+
+	var phoneFormat = /^97*(\d{10})$/;
 	if(inputPhone.match(phoneFormat)){
 		return true;
 	}else{
@@ -109,12 +109,12 @@ function validateForm(){
 
 	}
 
-	// if(ValidatePhone()===false){
-	// 	document.getElementById('telephoneError').innerHTML='טלפון סלולרי הינו שדה חובה - 10 ספרות';
-	// 	document.getElementById('telephoneError').style.display='block';
-	// 	document.getElementById('telephone').style.border='1px solid red';
-	// 	count++;
-	// }
+	if(ValidatePhone()===false){
+		document.getElementById('telephoneError').innerHTML='טלפון סלולרי הינו שדה חובה - 10 ספרות';
+		document.getElementById('telephoneError').style.display='block';
+		document.getElementById('telephone').style.border='1px solid red';
+		count++;
+	}
 
 
 	var FirstName = document.getElementById("FirstName").value;
