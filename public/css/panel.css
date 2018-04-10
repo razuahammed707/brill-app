@@ -41,7 +41,7 @@ height: 5px;
 #panel_box{
   display: none;
   z-index: 1;
-  margin-top: -10px;
+  margin-top: 0px;
   position: fixed;
   width: 230px;
   background: #fff;
