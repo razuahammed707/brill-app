@@ -49,7 +49,8 @@ router.post('/', function(req, res, next) {
 
 
   var telephone = req.body.telephone;
-  telephone.replace(/0(.*)/, '$1');
+  telephone= telephone.replace(/^0+/, '');
+  console.log(telephone);
   var userPhone = "972"+telephone;
   console.log(userPhone);
 
@@ -59,7 +60,7 @@ router.post('/', function(req, res, next) {
     if (err) throw err;
     var dbo = db.db("liron");
     dbo.collection("customers").findOne({"telephone":req.body.telephone}, function(err, result) {
-
+      res.render("thankyou")
 
       if (err) throw err;
       console.log(result);
@@ -153,7 +154,7 @@ router.post('/', function(req, res, next) {
 
             }else{
 
-              res.render("couponfinish")
+              res.render("couponfinish");
               console.log("opps sorry we are out of copoun");
 
               MongoClient.connect(url, function(err, db) {
