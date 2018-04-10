@@ -17,7 +17,7 @@ function ValidateEmail()
 function ValidatePhone(){
 	var inputPhone = document.getElementById('telephone').value;
 
-	var phoneFormat = /^97*(\d{10})$/;
+	var phoneFormat = /^05*(\d{8})$/;
 	if(inputPhone.match(phoneFormat)){
 		return true;
 	}else{
