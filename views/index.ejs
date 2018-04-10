@@ -9,12 +9,49 @@
 		<script src="js/main.js"></script>
 		<link rel="stylesheet" href="css/panel.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+			<script src="js/panel.js"></script>
 
 </head>
 
 <body dir="rtl">
 
+
+		<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <h1>מקרא מקלדת</h1>
+	    <hr>
+
+	    <img src="img/tab.png" style="margin">
+	    <h3 class="modalInner">לחץ על הטאב בכדי לעבור בין הטאבים השונים בדף</h3>
+
+
+	    <img src="img/enter.png" style="margin">
+	    <h3 class="modalInner">בכדי לפתוח טאב נבחר הקש ENTER</h3>
+
+
+	    <img src="img/arrow.png" style="margin">
+	    <h3 class="modalInner">בכדי לעלות למעלה, למטה, ימינה, שמאלה לחץ על כפתורי החיצים</h3>
+
+
+	    <img src="img/esc.png" style="margin">
+	    <h3 class="modalInner">בכדי לצאת הטאב מסויים לחץ על מקש ה- ESC</h3>
+
+
+	    <img src="img/end.png" style="margin">
+	    <h3 class="modalInner">בכדי לעבור לסוף השורה או מסמך, יש להקיש על מקש ה- END</h3>
+
+
+	    <img src="img/home.png" style="margin">
+	    <h3 class="modalInner">בכדי לעבור לתחילת השורה או מסמך, יש להקיש על מקש הבית</h3>
+
+
+	  </div>
+
+	</div>
 
 
 
@@ -23,7 +60,55 @@
 
 	<div class="mainwrapper">
 
+		<div id="panel_icon" onclick="myFunction()">
+	<img src="img/icon.png">
+</div>
 
+<div id="panel_box">
+	<ul>
+
+		<li  id="panelIcon">
+			<div class="listOption" onclick="displayNone()">
+				<p>
+					<img src="img/icon.png" > <span class="closep">סגור</span></p>
+			</div>
+		</li>
+
+		<li >
+			<div class="listOption"><button id="myBtn"><img src="img/tabA.png" class="menuIcon">מקלדת</button></div>
+		</li>
+
+		<li >
+			<div class="listOption"><button id="increase"><img src="img/increase.png" class="menuIcon">הגדל טקסט</button></div>
+		</li>
+
+		<li >
+			<div class="listOption"><button id="decrease"> <img src="img/decrese.png" class="menuIcon">הקטן טקסט</button></div>
+		</li>
+
+		<li >
+			<div class="listOption"><button id="black"><img src="img/black.png" class="menuIcon">שחור-לבן</button></div>
+		</li>
+
+
+		<li >
+			<div class="listOption"><button id="delcaration" onclick="openInNewTab('Accessabilty_Decleration.pdf')" ><img src="img/declartion.png" class="menuIcon">הצהרת נגישות</button></div>
+		</li>
+
+		<li >
+			<div class="listOption"><button onclick="resetMe()"><img src="img/reset.png" class="menuIcon">איפוס</button></div>
+		</li>
+
+		<li >
+			<div class="listOption"><a href="mailto:guerlain@sch.co.il?Subject=My Guerlain שירות לקוחות" target="_top"> <button><img src="img/mail.png" class="menuIcon">צור קשר</button></a></div>
+		</li>
+
+
+
+
+	</ul>
+
+</div>
 
 
 
@@ -151,6 +236,34 @@
 
 	</div>
 
+
+	      <script>
+	      // Get the modal
+	      var modal = document.getElementById('myModal');
+
+	      // Get the button that opens the modal
+	      var btn = document.getElementById("myBtn");
+
+	      // Get the <span> element that closes the modal
+	      var span = document.getElementsByClassName("close")[0];
+
+	      // When the user clicks the button, open the modal
+	      btn.onclick = function() {
+	          modal.style.display = "block";
+	      }
+
+	      // When the user clicks on <span> (x), close the modal
+	      span.onclick = function() {
+	          modal.style.display = "none";
+	      }
+
+	      // When the user clicks anywhere outside of the modal, close it
+	      window.onclick = function(event) {
+	          if (event.target == modal) {
+	              modal.style.display = "none";
+	          }
+	      }
+	      </script>
 
 
 </body>
