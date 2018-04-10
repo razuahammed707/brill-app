@@ -77,14 +77,18 @@ router.post('/', function(req, res, next) {
 
 
 
-      request.post({
-                  url: 'http://api.soprano.co.il/',
-                  form: data,
-                   headers: {'Content-Type': 'text/xml'}
-          },
-            function (err, httpResponse, body) {
-                  console.log(err, body);
-           });
+      request.post(
+                {url:'http://api.soprano.co.il/',
+                body : data,
+                headers: {'Content-Type': 'text/xml'}
+                },
+                function (error, response, body) {
+                    if (!error && response.statusCode == 200) {
+                        console.log(body)
+                    }
+                }
+            );
+
 
       }
 
@@ -140,14 +144,18 @@ router.post('/', function(req, res, next) {
 
 
 
-                        request.post({
-                                    url: 'http://api.soprano.co.il/',
-                                    form: data,
-                                     headers: {'Content-Type': 'text/xml'}
-                            },
-                              function (err, httpResponse, body) {
-                                    console.log(err, body);
-                             });
+                        request.post(
+                  {url:'http://api.soprano.co.il/',
+                  body : data,
+                  headers: {'Content-Type': 'text/xml'}
+                  },
+                  function (error, response, body) {
+                      if (!error && response.statusCode == 200) {
+                          console.log(body)
+                      }
+                  }
+              );
+
 
 
 
