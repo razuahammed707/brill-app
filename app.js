@@ -23,14 +23,18 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.post("/conv",(req,res)=>{
-	
+
 })
+
+app.get("/razu",(req,res)=>{
+  res.render("thankyou")
+})
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
 
 
 

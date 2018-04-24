@@ -110,7 +110,9 @@ function validateForm(){
 	}
 
 	if(ValidatePhone()===false){
-		document.getElementById('telephoneError').innerHTML='טלפון סלולרי הינו שדה חובה - 10 ספרות';
+		// document.getElementById('telephoneError').innerHTML='טלפון סלולרי הינו שדה חובה - 10 ספרות';
+		document.getElementById('telephoneError').innerHTML="שדה טלפון נייד הינו שדה חובה – מספר תקין בן 10 ספרות";
+
 		document.getElementById('telephoneError').style.display='block';
 		document.getElementById('telephone').style.border='1px solid red';
 		count++;
