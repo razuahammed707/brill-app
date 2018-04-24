@@ -1,4 +1,8 @@
 
+// phone
+
+
+
 
 
 // function
@@ -17,7 +21,7 @@ function ValidateEmail()
 function ValidatePhone(){
 	var inputPhone = document.getElementById('telephone').value;
 
-	var phoneFormat = /^05*(\d{8})$/;
+	var phoneFormat = /^05/;
 	if(inputPhone.match(phoneFormat)){
 		return true;
 	}else{

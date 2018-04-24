@@ -232,8 +232,12 @@ footer img{
 	overflow: hidden;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
 	.formdata{
 		padding: 20px;
+	}
+	.box2{
+		width: 85%;
+
 	}
 }
