@@ -29,8 +29,7 @@ app.post("/conv",(req,res)=>{
 
 app.get("/razu",(req,res)=>{
   res.render("thankyou")
-  let email = new Email("123");
-  console.log(`${email.send()}`)
+  
 })
 
 
