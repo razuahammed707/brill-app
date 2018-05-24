@@ -141,7 +141,7 @@ function validateForm(){
 	console.log(checkbox1)
 
 	if(checkbox1===false){
-		document.getElementById('checkbox1Error').innerHTML='יש לאשר את תקנון הפעילות';
+		document.getElementById('checkbox1Error').innerHTML="יש לאשר את רישום פרטייך במאגר";
 		document.getElementById('checkbox1Error').style.display='block';
 			count++;
 	}
