@@ -172,6 +172,11 @@ o {box-sizing: border-box; }
 		display: block;
 		text-align: center;
 	}
+
+	footer p {
+		text-align: center;
+	}
+
 	input[type="submit"]{
 		display: inline-block;
 		float: none;
