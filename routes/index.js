@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var mongodb = require("mongodb");
+var nodemailer = require('nodemailer');
+var hbs=require("nodemailer-express-handlebars")
 
 var MongoClient = require('mongodb').MongoClient;
 // var url = "mongodb://localhost:27017/liron";
@@ -9,6 +11,27 @@ var url = "mongodb://razu:munna707@ds239439.mlab.com:39439/liron"
 
 var request = require("request");
 
+
+
+// Email Setup
+
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'razuahammed.lpu@gmail.com',
+    pass: '^Munna^%707'
+  }
+});
+
+
+transporter.use('compile',hbs({
+	viewPath: 'views',
+	extName:".hbs"
+}));
+
+
+///email
 
 
 
@@ -140,14 +163,35 @@ router.post('/', function(req, res, next) {
                           });
                         });
 
-                        //Send sms
+
+                        console.log("Mail portion"+req.body.FirstName)
+
+                      // send email
+                      var mailOptions = {
+                        from: 'noreply@stepin.co.il',
+                        to: req.body.email,
+                        subject:req.body.FirstName +",הטבת 10% הנחה, במיוחד בשבילך !! פרסומת",
+                        template: "email",
+                        context: {
+                        	coupon:couponId,                        }
+                      };
+
+
+                      transporter.sendMail(mailOptions, function(error, info){
+                        if (error) {
+                          console.log(error);
+                        } else {
+                          console.log('Email sent: ' + info.response);
+                        }
+                      });
 
 
 
-                                request.post({url:'http://www.pages02.net/nessatltd-brill/iframeWS', form: {fn:req.body.FirstName,ln:req.body.LastName,phone:req.body.telephone,email:req.body.email,nl:"1",cpn:couponId,med:"sms",src:'קמפיין השקה'}}, function(err,httpResponse,body){
-                              	console.log("Sent to watson "+httpResponse)
-                              	//console.log(body)
-                              })
+
+
+                      //Send sms
+
+
 
                         var message= req.body.FirstName+", תודה על הרשמתך !! קוד הטבת 10% הנחה: ("+couponId+"), למימוש חד פעמי באחת מהרשתות: גלי, סולוג, לי קופר, ניין ווסט, איזי ספיריט, אן קליין ושואו-אופ. עד 30.6.18, כפוף לתנאי המבצעים, להסרה השב הסר"
                     //  var message = req.body.FirstName+", תודה על הרשמתך !! קוד הטבת 10% הנחה: ( "+couponId+" ), למימוש חד פעמי באחת מהרשתות: גלי, סולוג, לי קופר, ניין ווסט, איזי ספיריט, אן קליין, כל נעל סנטר ושואו-אופ. עד 30.5.18, כפוף לתנאי המבצעים, להסרה השב הסר";

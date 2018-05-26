@@ -6,13 +6,25 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "casper": "^0.1.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
     "express": "~4.16.0",
+    "form-scraper": "0.0.4",
     "http-errors": "~1.6.2",
+    "mocha": "^5.2.0",
     "mongodb": "^3.0.5",
     "morgan": "~1.9.0",
-    "request": "^2.85.0"
+    "nodemailer": "^4.6.5",
+    "nodemailer-express-handlebars": "^3.0.0",
+    "phantomjs-prebuilt": "^2.1.16",
+    "promisified-request": "0.0.3",
+    "querystring": "^0.2.0",
+    "request": "^2.85.0",
+    "system": "^2.0.1",
+    "webpage": "^0.3.0",
+    "zombie": "^6.1.2"
   }
 }
