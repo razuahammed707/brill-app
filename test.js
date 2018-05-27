@@ -1,3 +1,17 @@
-var request=require("request")
+var mongodb = require("mongodb");
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://razu:munna707@ds239439.mlab.com:39439/liron"
 
-request.post('http://www.pages02.net/nessatltd-brill/Razu/',{"form":{"fn":'Razu ', "ln":"Ahammed","email":"rauzahammed@icloud.com","phone":"2323232","coupon":"haug123","AD":1,"media":"sms","source":"קמפיין השקה"}})
+
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  var dbo = db.db("liron");
+  var myquery = { bookStatus: true };
+  var newvalues = { $set: {bookStatus: false } };
+  dbo.collection("coupon").updateMany(myquery, newvalues, function(err, res) {
+    if (err) throw err;
+    console.log("1 document updated");
+    db.close();
+  });
+});
