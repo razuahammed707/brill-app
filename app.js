@@ -10,6 +10,12 @@ var Email = require("./routes/email")
 
 var app = express();
 
+app.all('/*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -29,7 +35,7 @@ app.post("/conv",(req,res)=>{
 
 app.get("/razu",(req,res)=>{
   res.render("thankyou")
-  
+
 })
 
 
@@ -38,6 +44,10 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+
+app.get("/fonts",function(req,res){
+  res.sendFile("public")
+})
 
 
 
